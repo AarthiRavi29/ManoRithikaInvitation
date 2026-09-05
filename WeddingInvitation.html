@@ -94,7 +94,8 @@
        background: #C0C0C0;   /* silver on hover */
     }
     .map-btn {
-       display: inline-block;
+       display: block;
+       margin: 10px;
        padding: 12px 20px;
        background: #fff;   /* gold */
        color: #333;
@@ -149,6 +150,13 @@
     @keyframes scrollText {
        0%   { transform: translateX(0); }
        100% { transform: translateX(-100%); }
+    }
+    #countdown {
+       margin-top: 20px;
+       text-align: center;
+       font-size: 1.2em;
+       color: goldenrod;   /* festive golden text */
+       font-weight: bold;
     }
   </style>
 </head>
@@ -214,7 +222,7 @@
      class="map-btn">
     📍 View on Google Maps
   </a>
-  <a href="#reception" class="btn">Next Page</a>
+  <a href="#reception" class="map-btn">Next Page</a>
 </section>
 
 <section id="reception">
@@ -227,21 +235,21 @@
      class="map-btn">
     📍 View on Google Maps
   </a>
-  <a href="#gallery" class="btn">Next Page</a>
+  <a href="#gallery" class="map-btn">Next Page</a>
 </section>
 
 <!-- Gallery Section -->
 <section id="gallery">
   <h1>Manoranjith & Rithika Shri</h1>
   <div class="gallery">
-    <p>Manoranjith</p>
+    <p>GROOM</p>
     <div class="frame">
       <img src="images/gallery1.jpg" alt="Grrom photo">
     </div>
     <p></p>
-    <p>Rithika Shri</p>
+    <p>BRIDE</p>
     <div class="frame">
-      <img src="images/gallery2.jpg" alt="First Meet">
+      <img src="images/gallery4.jpg" alt="First Meet">
     </div>
     <p>Engagement Memories</p>
     <div class="frame">
@@ -249,14 +257,14 @@
     </div>
     <div class="frame-row">
       <div class="frame">
-        <img src="images/gallery4.jpg" alt="Bride photo">
+        <img src="images/gallery2.jpg" alt="Bride photo">
       </div>
     </div>
   </div>
 
 
 
-  <a href="#invite" class="btn">Next Page</a>
+  <a href="#invite" class="map-btn">Next Page</a>
   <!--<a href="#reception" class="arrow">&#8593;</a>-->
 </section>
 <section id="invite">
@@ -265,8 +273,28 @@
   <p>Every smile, every blessing, every hug will make our day complete </p>
   <p>we can’t wait to celebrate with you </P>
   <P>Let’s dance, laugh, and celebrate love together!</p>
-
+  <div id="countdown">
+    <h2>Countdown to Our Wedding</h2>
+    <p id="daysLeft"></p>
+  </div>
 </section>
+<script>
+    // Set your wedding date here
+    const weddingDate = new Date("2026-09-13"); // YYYY-MM-DD format
+    const today = new Date();
+
+    // Calculate difference in milliseconds
+    const diffTime = weddingDate - today;
+
+    // Convert to days
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+    // Show result
+    document.getElementById("daysLeft").innerText =
+      diffDays + " days left until the big day!";
+</script>
+
+
 <!-- RSVP Section
 <section id="rsvp">
   <h1>RSVP</h1>
