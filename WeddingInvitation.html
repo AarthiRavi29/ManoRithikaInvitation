@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wedding Invitation</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+        margin: 0;
+        font-family: 'Georgia', serif;
+        color: #fff;
+        scroll-behavior: smooth;
+    }
+    section {
+      height: 100vh; /* full screen height */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-size: cover;
+      background-position: center;
+
+    }
+    #welcome {
+      background-image: url('images/welcome.jpg');
+    }
+
+    #marriage {
+      background-image: url('images/marriagebg.jpg');
+    }
+
+    #reception {
+      background-image: url('images/receptionbg.jpg');
+    }
+    #gallery {
+      background-image: url('images/gallerybg.jpg');
+    }
+    #invite {
+      background-image: url('images/bginv.jpg');
+    }
+
+    h1 {
+      font-size: 3.0em;
+      background: linear-gradient(to right, #FFD700, #C0C0C0); /* gold to silver */
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+}
+    p {
+      font-size: 2.5em;
+      margin: 8px 0;
+    }
+    .arrow {
+      cursor: pointer;
+      font-size: 2em;
+      color: #000;
+      margin-top: 20px;
+      text-decoration: none;
+    }
+    nav {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.5); /* semi-transparent dark background */
+      padding: 8px 12px;
+      border-radius: 8px;
+      backdrop-filter: blur(4px); /* blur effect */
+      z-index: 1000;
+    }
+    nav a {
+      margin: 0 5px;
+      color: #ffd700;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease
+    }
+    .music-btn {
+      position: fixed;   /* stays in place even when scrolling */
+      bottom: 20px;      /* distance from bottom */
+      right: 20px;       /* distance from right */
+      padding: 10px 15px;
+      font-size: 1em;
+      background: rgba(255, 215, 0, 0.85);   /* gold button */
+      color: #333;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      backdrop-filter: blur(6px); /* blur effect */
+      z-index: 999; /* ensures it stays above section content */
+    }
+
+    .music-btn:hover {
+       background: #C0C0C0;   /* silver on hover */
+    }
+    .map-btn {
+       display: inline-block;
+       padding: 12px 20px;
+       background: #fff;   /* gold */
+       color: #333;
+       font-weight: bold;
+       text-decoration: none;
+       border-radius: 8px;
+       transition: background 0.3s ease;
+    }
+
+    .map-btn:hover {
+       background: #C0C0C0;   /* silver on hover */
+    }
+    section {
+       position: relative; /* important so absolute works inside */
+    }
+
+    .btn {
+      position: absolute;   /* relative to the section */
+      bottom: 70px;         /* distance from bottom of section */
+      right: 20px;          /* distance from right of section */
+      padding: 10px 15px;
+      font-size: 1em;
+      background: rgba(255, 215, 0, 0.85); /* gold with opacity */
+      color: #333;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      backdrop-filter: blur(4px); /* blur behind button */
+    }
+
+    .btn:hover {
+       background: rgba(192, 192, 192, 0.85); /* silver on hover */
+    }
+    .marquee {
+       position: absolute;
+       top: 40px;       /* place at bottom of section */
+       width: 100%;        /* full width */
+       overflow: hidden;
+       white-space: nowrap;
+    }
+
+    .marquee span {
+       display: inline-block;
+       padding-left: 100%; /* start off screen */
+       font-size: 1.5em;
+       font-weight: bold;
+       color: #FFD700;     /* gold text */
+       animation: scrollText 12s linear infinite;
+    }
+
+    @keyframes scrollText {
+       0%   { transform: translateX(0); }
+       100% { transform: translateX(-100%); }
+    }
+  </style>
+</head>
+<body>
+<!-- Background Music -->
+
+
+<button onclick="toggleMusic()" class="music-btn">Music  🎵</button>
+
+<audio id="bg-music" autoplay loop>
+  <source src="music/Jothi_Neranjava.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  function toggleMusic() {
+    const music = document.getElementById('bg-music');
+    const btn = document.querySelector('.music-btn');
+
+    if (music.paused) {
+      music.play();
+      btn.textContent = "🔊 Music On";
+    } else {
+      music.pause();
+      btn.textContent = "🔇 Music Off";
+    }
+  }
+</script>
+
+<!-- Navigation -->
+<nav>
+  <a href="#welcome">Sangeeth</a>
+  <a href="#marriage">Marriage</a>
+  <a href="#reception">Reception</a>
+  <a href="#gallery">Gallery</a>
+</nav>
+
+<!-- Reception Section -->
+<section id="welcome">
+  <div class="marquee">
+    <span> ❤ Manoranjith weds Rithika Shri ❤</span>
+  </div>
+  <p>WITH DIVINE BLESSINGS AND LOVE</p>
+  <p>WE CORDIALLY INVITE YOU TO CELEBRATE</p>
+  <p>THE MARRIAGE OF</p>
+  <h1>Manoranjith</h1>
+  <p>&</p>
+  <H1>Rithika Shri</h1>
+
+  <p>request the honour of your presence</p>
+  <p>as they begin their journey together</p>
+  <p>13 September 2026</p>
+  <a href="#marriage" class="map-btn">VIEW CELEBRATION</a>
+</section>
+
+<!-- Marriage Section -->
+<section id="marriage">
+  <h1>Marriage</h1>
+  <p><strong>Date:</strong> 13th September 2026</p>
+  <p><strong>Time:</strong> 4:00 AM - 6:00 AM</p>
+  <p><strong>Venue:</strong> Shri Kandhamalai Balathandayudapani Thirukovil, Namakkal District</p>
+  <a href="https://maps.app.goo.gl/iSCy8Bi9EwBrUJkY9"
+     target="_blank"
+     class="map-btn">
+    📍 View on Google Maps
+  </a>
+  <a href="#reception" class="btn">Next Page</a>
+</section>
+
+<section id="reception">
+  <h1>Reception</h1>
+  <p><strong>Date:</strong> 13th September 2026</p>
+  <p><strong>Time:</strong> 11.00 AM - 2.00 PM</p>
+  <p><strong>Venue:</strong> Sathyavathi Muthusamy Thirumana Mandapam, Namakkal</p>
+  <a href="https://maps.app.goo.gl/P9AToZACFXukBpt96"
+     target="_blank"
+     class="map-btn">
+    📍 View on Google Maps
+  </a>
+  <a href="#gallery" class="btn">Next Page</a>
+</section>
+
+<!-- Gallery Section -->
+<section id="gallery">
+  <h1>Manoranjith & Rithika Shri</h1>
+  <div class="gallery">
+    <div class="frame">
+      <img src="images/gallery1.jpg" alt="Grrom photo">
+    </div>
+    <div class="frame">
+      <img src="images/gallery2.jpg" alt="First Meet">
+    </div>
+    <div class="frame">
+      <img src="images/gallery3.jpg" alt="Engagement photo">
+    </div>
+    <div class="frame">
+      <img src="images/gallery4.jpg" alt="Bride photo">
+    </div>
+  </div>
+
+
+
+  <a href="#invite" class="btn">Next Page</a>
+  <!--<a href="#reception" class="arrow">&#8593;</a>-->
+</section>
+<section id="invite">
+  <h1>Join the celebration with us</h1>
+  <p><strong>Your presence will make our moments more memorable</strong> </p>
+  <p>Every smile, every blessing, every hug will make our day complete </p>
+  <p>we can’t wait to celebrate with you </P>
+  <P>Let’s dance, laugh, and celebrate love together!</p>
+
+</section>
+<!-- RSVP Section
+<section id="rsvp">
+  <h1>RSVP</h1>
+  <p>Please confirm your presence</p>
+  <a href="#reception" class="arrow">&#8593;</a>
+</section>-->
+
+</body>
+</html>
