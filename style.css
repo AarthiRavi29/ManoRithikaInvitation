@@ -1,28 +1,38 @@
 .gallery {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 40px;
-  margin-top: 20px;
+  display: block; /* stack everything vertically */
+}
+
+.gallery p {
+  margin: 15px 0;
+  text-align: center;
+  font-weight: bold;
 }
 
 .frame {
-  width: 200px;      /* medium size */
-  height: 250px;     /* fixed height */
-  overflow: hidden;  /* hides overflow so all look equal */
-  border: 6px solid #000; /* black frame */
+  width: 200px;
+  height: 250px;
+  overflow: hidden;
+  border: 6px solid #000;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  margin: 0 auto 20px auto; /* center each frame */
 }
 
 .frame img {
   width: 100%;
   height: 100%;
-  object-fit: cover;       /* fills the frame neatly */
-  object-position: center; /* keeps focus balanced */
+  object-fit: cover;
+  object-position: center;
   transition: transform 0.3s ease;
 }
 
 .frame img:hover {
   transform: scale(1.05);
+}
+
+/* Special row for last two images */
+.frame-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* spacing between the two frames */
 }
