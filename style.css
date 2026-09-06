@@ -1,5 +1,5 @@
 .gallery {
-  display: block;
+  display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 40px;
@@ -19,7 +19,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center; /* crops image to fit frame evenly */
+  object-position: top; /* crops image to fit frame evenly */
   transition: transform 0.3s ease;
 }
 
